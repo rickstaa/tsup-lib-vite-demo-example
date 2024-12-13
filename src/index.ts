@@ -1,5 +1,6 @@
-export const greet = (name: string): string => {
+export const greet = async (name: string): Promise<string> => {
+  console.log(process.platform);
   return `Hello, ${name}!`;
 };
 
-console.log(greet("World"));
+console.log(greet("World2"));
