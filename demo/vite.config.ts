@@ -5,12 +5,8 @@ import { nodePolyfills } from "vite-plugin-node-polyfills";
 
 export default defineConfig({
   plugins: [nodePolyfills(), react()],
-  resolve: {
-    alias: {
-      "tsup-lib-vite-demo-example": path.resolve(__dirname, "../src"),
-    },
-  },
   build: {
+    sourcemap: true,
     commonjsOptions: {
       transformMixedEsModules: true,
     },
@@ -19,6 +15,11 @@ export default defineConfig({
         interop: 'esModule'
       }
     }
+  },
+  resolve: {
+    alias: {
+      "tsup-lib-vite-demo-example": path.resolve(__dirname, "../src"),
+    },
   },
   server: {
     fs: {
