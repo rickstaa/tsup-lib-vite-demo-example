@@ -11,11 +11,14 @@ export default defineConfig({
     },
   },
   build: {
-    rollupOptions: {
-      external: [
-        "vite-plugin-node-polyfills/shims/process",
-      ],
+    commonjsOptions: {
+      transformMixedEsModules: true,
     },
+    rollupOptions: {
+      output: {
+        interop: 'esModule'
+      }
+    }
   },
   server: {
     fs: {
